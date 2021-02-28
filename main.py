@@ -20,4 +20,7 @@ for link in search_result_links:
     else:
         property_links.append(href)
 
-print(property_links)
+# Get the property addresses
+search_result_addresses = soup.select(".knPImU")
+property_addresses = [address.get_text() for address in search_result_addresses]
+print(property_addresses)
