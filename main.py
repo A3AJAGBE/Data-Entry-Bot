@@ -23,4 +23,8 @@ for link in search_result_links:
 # Get the property addresses
 search_result_addresses = soup.select(".knPImU")
 property_addresses = [address.get_text() for address in search_result_addresses]
-print(property_addresses)
+
+# Get the property price
+search_result_prices = soup.select(".gDBFnc")
+property_prices = [price.get_text().strip() for price in search_result_prices]
+print(property_prices)
