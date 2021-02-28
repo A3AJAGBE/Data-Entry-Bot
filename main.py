@@ -15,6 +15,9 @@ search_result_links = soup.select(".itNYNv a")
 property_links = []
 for link in search_result_links:
     href = link["href"]
-    print(href)
+    if "http" not in href:
+        property_links.append(f"https://www.daft.ie{href}")
+    else:
+        property_links.append(href)
 
-
+print(property_links)
